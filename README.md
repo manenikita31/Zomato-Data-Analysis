@@ -10,11 +10,10 @@ This project involves analyzing a dataset from Zomato to understand various aspe
 + Usage
 
 # **Project Structure**
-Zomato_Analysis/
-│
-├── Zomato data.csv           # Dataset used for analysis
-├── analysis.py               # Python script containing the analysis code
-└── README.md                 # Project documentation
++ Zomato_Analysis│
+  - Zomato data.csv           # Dataset used for analysis
+  - analysis.py               # Python script containing the analysis code
+  - README.md                 # Project documentation
 
 # **Dependencies**
 To run this project, ensure you have the following libraries installed:
