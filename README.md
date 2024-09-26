@@ -1,62 +1,66 @@
-# Zomato-Data-Analysis
-#Analysis of the Zomato Data
-#Step 1 : Importing Libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
+#**Overview**
+This project involves analyzing a dataset from Zomato to understand various aspects of restaurant ratings, types, and ordering preferences. The analysis is conducted using Python with libraries such as Pandas, NumPy, Matplotlib, and Seaborn.
 
-#Step 2 : Create the dataframe
-dataframe = pd.read_csv("Zomato data .csv")
+#**Table of Contents**
++Project Structure
++Dependencies
++Dataset
++Analysis Steps
++Conclusions
++Usage
 
-#Convert the datatype of column -rate
-def handleRate(value):
-    value = str(value).split('/')
-    value = value[0];
-    return float(value)
-dataframe['rate']=dataframe['rate'].apply(handleRate)
-print(dataframe.head())
+#**Project Structure**
+*Zomato_Analysis/
+│
+├── Zomato data.csv           # Dataset used for analysis
+├── analysis.py               # Python script containing the analysis code
+└── README.md                 # Project documentation*
 
-#Type of restaurant
-sns.countplot(x=dataframe['listed_in(type)'])
-plt.xlabel("Type of Restaurant")
-plt.show()
+#**Dependencies**
+To run this project, ensure you have the following libraries installed:
 
-#Conclusion - majority of the restaurant falls in dinning category
++pandas
++numpy
++matplotlib
++seaborn
 
-grouped_data = dataframe.groupby('listed_in(type)')['votes'].sum()
-result = pd.DataFrame({'votes': grouped_data})
-plt.plot(result,c="red",marker="o")
-plt.xlabel("Type of Restaurant", c="red", size =20)
-plt.ylabel("Votes",c="red" ,size=20)
-plt.show()
+#**Dataset**
+The dataset used in this analysis is Zomato data.csv. It contains information about restaurants, including:
 
-#Conclusion - dinning restaurant has recieved maximum votes
++Ratings
++Votes
++Types of cuisine
++Approximate costs
++Online ordering options
 
-plt.hist(dataframe["rate"],bins=5)
-plt.title("Ratings Distribution")
-plt.show()
+#**Analysis Steps**
+**1.Import Libraries:** Load the necessary libraries for data manipulation and visualization.
+**2. Load Data:** Read the CSV file into a Pandas DataFrame.
+**3.Data Cleaning:** Convert the 'rate' column into a numeric format for analysis.
+**4.Visualization:**
++Count the number of restaurants by type.
++Analyze the total votes received by each type of restaurant.
++Examine the distribution of ratings.
++Analyze spending behavior for couples.
++Compare ratings based on online and offline ordering modes.
++Create a heatmap to visualize the relationship between restaurant type and online ordering.
 
-#Conclusion - The Majority restaurant recieved ratings from 3.5 to 4
+#**Conclusions**
++Restaurant Type: The majority of restaurants fall into the dining category.
++Votes Received: Dining restaurants receive the maximum votes compared to other types.
++Rating Distribution: Most restaurants have ratings ranging from 3.5 to 4.
++Couples' Spending: The majority of couples prefer to spend around 300 rupees.
++Order Mode Ratings: Online orders receive higher ratings compared to offline orders.
++Ordering Preferences: Dining restaurants mainly accept offline orders, while cafes tend to receive more online orders.
 
-#Average order spending by couples
-couple_data = dataframe['approx_cost(for two people)']
-sns.countplot(x=couple_data)
-plt.show()
+#**Usage**
+To run the analysis, execute the dataanalysis.py script:
 
-#Conclusion - the majority of couples prefer with an approximate cost of 300 rupees
+python dataanalysis.py
+Make sure the dataset (Zomato data.csv) is in the same directory as the script.
 
-#Which mode receives maximum ratings
-plt.figure(figsize=(6,6))
-sns.boxenplot(x='online_order',y='rate', data= dataframe)
-plt.show()
+#**Acknowledgments**
+This project is based on publicly available data from Zomato. The insights drawn from this analysis can help stakeholders understand customer preferences and improve their service offerings.
 
-#Conclusion - Offline order recieved lower rating in comparison to online order
-pivot_table = dataframe.pivot_table(index='listed_in(type)',columns='online_order',aggfunc='size',fill_value=0)
-sns.heatmap(pivot_table,annot= True, cmap="YlGnBu", fmt='d')
-plt.title("Heatmap")
-plt.xlabel("Online Order")
-plt.ylabel("Listed In (Type)")
-plt.show()
 
-#Conclusion: Dinning restaurants primarily accept offline orders, whereas cafes primarily receive online orders. This suggests that clients prefer offline order in person at restaurants, but prefer online orders at cafes.
+
