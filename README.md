@@ -1,13 +1,13 @@
-#**Overview**
+# **Overview**
 This project involves analyzing a dataset from Zomato to understand various aspects of restaurant ratings, types, and ordering preferences. The analysis is conducted using Python with libraries such as Pandas, NumPy, Matplotlib, and Seaborn.
 
-#**Table of Contents**
-+Project Structure
-+Dependencies
-+Dataset
-+Analysis Steps
-+Conclusions
-+Usage
+# **Table of Contents**
++ Project Structure
++ Dependencies
++ Dataset
++ Analysis Steps
++ Conclusions
++ Usage
 
 #**Project Structure**
 *Zomato_Analysis/
