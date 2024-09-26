@@ -34,10 +34,10 @@ The dataset used in this analysis is Zomato data.csv. It contains information ab
 + Online ordering options
 
 # **Analysis Steps**
-**1.Import Libraries:** Load the necessary libraries for data manipulation and visualization.
+**1. Import Libraries:** Load the necessary libraries for data manipulation and visualization.
 **2. Load Data:** Read the CSV file into a Pandas DataFrame.
-**3.Data Cleaning:** Convert the 'rate' column into a numeric format for analysis.
-**4.Visualization:**
+**3. Data Cleaning:** Convert the 'rate' column into a numeric format for analysis.
+**4. Visualization:**
 + Count the number of restaurants by type.
 + Analyze the total votes received by each type of restaurant.
 + Examine the distribution of ratings.
