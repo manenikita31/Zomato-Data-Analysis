@@ -11,9 +11,9 @@ This project involves analyzing a dataset from Zomato to understand various aspe
 
 # **Project Structure**
 + Zomato_Analysis│
-  - Zomato data.csv           # Dataset used for analysis
-  - analysis.py               # Python script containing the analysis code
-  - README.md                 # Project documentation
+  - Zomato data.csv                   # Dataset used for analysis
+  - dataanalysis.py                   # Python script containing the analysis code
+  - README.md                         # Project documentation
 
 # **Dependencies**
 To run this project, ensure you have the following libraries installed:
@@ -34,8 +34,11 @@ The dataset used in this analysis is Zomato data.csv. It contains information ab
 
 # **Analysis Steps**
 **1. Import Libraries:** Load the necessary libraries for data manipulation and visualization.
+
 **2. Load Data:** Read the CSV file into a Pandas DataFrame.
+
 **3. Data Cleaning:** Convert the 'rate' column into a numeric format for analysis.
+
 **4. Visualization:**
 + Count the number of restaurants by type.
 + Analyze the total votes received by each type of restaurant.
