@@ -64,5 +64,9 @@ Make sure the dataset (Zomato data.csv) is in the same directory as the script.
 # **Acknowledgments**
 This project is based on publicly available data from Zomato. The insights drawn from this analysis can help stakeholders understand customer preferences and improve their service offerings.
 
+# **Deployment**
+  Local URL: http://localhost:8501
+  Network URL: http://10.31.46.141:8501
+
 
 
